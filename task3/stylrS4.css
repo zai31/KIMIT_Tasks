@@ -1,0 +1,92 @@
+body{
+   background-image: url("images/BG.png") ;
+
+}
+
+.form{
+    /* text-align: center ;*/
+     justify-content: center;
+     height: fit-content ;
+     font-size:xx-large;
+     background-color: rgba(250, 250, 250, 0.108);
+     margin: 0px 20px;
+     padding: 10px 20px;
+     position: absolute;
+     top: 50%;/*centers*/
+     left: 50%;
+     transform: translate(-50%, -50%);
+     border-radius: 10px ;
+  color: rgb(196, 198, 201);
+    backdrop-filter: blur(10px); /* glass effect */
+    border:5px solid rgba(102, 97, 97, 0.533);
+ }
+
+.head{
+ text-align: center;
+ padding: 0px;
+ font-size: 20px;
+}
+
+.head h2{
+    margin:5px;
+}
+
+
+.name {
+display: flex;
+gap: 20px;
+margin-bottom: 30px;
+}
+.name input{
+/*input box modifications*/
+ background: transparent;
+ outline: none;
+ border: none;
+ width: 100%;       /* ✅ make it take the full width */
+ border-bottom: 1px solid rgba(190, 185, 185, 0.822);
+}
+.name i {
+  margin-right: 0px;
+  align-self: center;   /* vertically centered with inputs */
+  color: #777a7e;
+}
+
+.name input{
+/*input box modifications*/
+ background: transparent;
+ outline: none;
+ border: none;
+ width: 100%;       /* ✅ make it take the full width */
+ border-bottom: 1px solid rgba(190, 185, 185, 0.822);
+  font-size: 20px;
+
+}
+
+
+ select{
+/*input box modifications*/
+ background: transparent;
+ outline: none;
+ border: none;
+  border-bottom: 1px solid rgba(190, 185, 185, 0.6);
+  color: rgb(182, 182, 183);
+  width: 100%;       /* ✅ make it take the full width */
+  font-size: 12px;
+ }
+
+ .sign{
+    text-align: center;
+    font-size: 20px;
+    background-color: rgb(192, 58, 223);
+    border-radius: 10px;
+       margin: 0 auto;  /* center horizontally */
+    display: block;  /* make margin auto work */
+    transition: 0.3s; /* smooth hover */
+    margin-bottom: 10px;
+    color: rgb(255, 255, 255);
+
+ }
+ .sign:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(192, 58, 223);   
+}

@@ -1,0 +1,528 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+:root {
+    --white-color: #ffffff;
+    --primary-color: #0dcaf0;
+    --secondary-color: #0d6efd;
+    --section-bg-color: #f0f8ff;
+    --dark-color: #000000;
+    --navbar-bg-color: #273053;
+    --p-color: #717275;
+    --highlight-icon-color: #ff0100;
+    --main-transition: 0.5s all ease-in-out;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+li {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: var(--white-color);
+    text-transform: capitalize;
+    transition: var(--main-transition);
+}
+h1{
+    text-transform: capitalize;
+}
+p{
+    color: #717275;
+    font-size: 16px;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+    text-align: center;
+    padding: 15px 0;
+    background-color: var(--navbar-bg-color);
+    z-index: 9999;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 20px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.menu-list {
+    
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-right: 20px;
+}
+
+
+.menu-list li a {
+    font-size: 16px;
+    font-weight: 400;
+    transition: var(--main-transition);
+
+}
+.menu-list li a:hover {
+    color: var(--primary-color);
+}
+
+.navbar button{
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    background-color: var(--secondary-color);
+}
+.navbar button:hover{
+    background-color: var(--primary-color);
+}
+
+.hero {
+     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;/*90% of the viewport height.*/
+    text-align: center;
+    color: var(--white-color);
+}
+.hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;/*Shorthand for top: 0; right: 0; bottom: 0; left: 0; — pins the video to all four edges of .hero.*/
+   z-index: -2;/*Pushes the video behind other content*/
+
+}
+.hero h1{
+    text-transform: uppercase;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.hero h1 span:first-child{
+    color: var(--primary-color);
+    text-decoration:underline ;
+}
+
+.hero .date-location {
+   color: var(--white-color);
+    border: 1px solid var(--white-color);
+    padding: 10px 20px;
+    margin-right: 0px;
+    display:inline-block;
+}
+
+.hero .date-location span:first-child {
+   border-right: 1px solid var(--white-color);
+       padding:8px 20px;
+
+}
+.hero .date-location span:not(:first-child) {
+    padding: 15px 25px;
+}
+
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(27, 34, 110, 0.473);
+    background: linear-gradient(rgba(236, 237, 244, 0.214), rgb(4, 7, 35));
+    z-index: -1;
+}
+
+.highlights{
+background-color:rgb(0, 3, 36);
+height: 400px;
+ 
+}
+.highlights .highlights-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    gap: 20px;
+    padding: 50px;
+    padding-top: 200px;
+    
+}
+.highlights .highlight{
+    width: 500px;
+    position: relative;
+    height: 300px;
+    flex: 1 1 calc(33.33% - 20px);  /* 3 per row on desktop */
+    text-align: center;
+    overflow: hidden;/* keeps img inside border , making the right effect*/
+    border: 1px solid;
+    margin: 0px;
+
+}
+.highlights .highlight img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease-in-out; /* smooth zoom */
+
+}
+/* Overlay, This is a CSS pseudo-element.
+
+It lets us add a new “virtual element” inside .
+highlight without adding extra HTML. */
+.highlights .highlight::after {
+    content: "";/*creates a box that we can style.*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* dark transparent overlay */
+    z-index: 1;/*Image (default z-index 0) → overlay (1) → text (2).*/
+    
+}
+
+.highlights .highlight:hover img {
+    transform: scale(1.2); /* zoom in and stay */
+}
+
+
+.highlights .highlight h3{
+    font-size: 20px;
+    text-transform: capitalize;
+    align-self: center;
+     position: absolute; /* overlay it */
+    top: 50%;
+    left: 50%;
+                transform: translate(-50%, -50%);   
+                color: var(--white-color)
+                ;
+                font-size:40px;
+   z-index: 2;
+}
+.highlights .highlight:hover h3{
+    visibility: hidden;
+
+}
+
+.about{
+    display: flex;
+    height: 500px;
+    font-size: 20px;
+    padding: 100px;
+}
+
+
+.about .sec2,.about .sec1{
+   
+    padding: 50px;
+    font-size: 25px;
+    
+}
+.about .sec2 h3{
+padding-top: 80px;
+}
+.about .sec1 .btn button{
+    font-size: initial;
+}
+
+
+.about .sec1 .btn{
+    display: flex;
+
+}
+.about .sec1 .btn button{
+    padding: 10px 20px;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+
+
+}
+
+.about .sec1 .btn button:first-child{
+    color: var(--primary-color);
+    border:  2px solid var(--primary-color) ;
+    border-radius: 20px;
+}
+
+.about .sec1 .btn button:last-child{
+    color: var(--white-color);
+    background-color: var(--navbar-bg-color);
+    border-radius: 20px;
+
+}
+.about .sec1 .btn button:hover{
+ background-color: var(--primary-color);
+}
+.about .sec1 .btn button:first-child:hover{
+   color:#f0f8ff
+}
+.about .sec1 h1 span:last-child{
+    color: var(--primary-color);
+    text-decoration:underline ;
+}
+.about .sec1 h1,h2,p{
+    margin-bottom: 20px;
+}
+.about .sec2 .line{
+    width: 100%;
+    height: 1px;
+    margin-top: 70px;
+    background-color:#d1d1d2;
+}
+
+.about .sec2 .speakers{
+    display: flex;
+    margin-top: 80px;
+      align-items: center;
+      gap: 28px;
+}
+.about .sec2 .speakers ul{
+    display: flex;
+  
+    margin: 0px 0px;
+}
+
+.about .sec2 .speakers ul li{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    margin: -5px;
+    justify-content: center;
+    align-items: center;
+}
+.about .sec2 .speakers ul li:first-child{
+    margin-left: 0px;
+}
+.about .sec2 .speakers ul li img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover ;
+    display: block;
+  border: 2px solid #fff; /* white border so overlaps are visible */
+}
+
+
+.speakers section{
+    background-color: var(--section-bg-color);
+     padding: 100px;
+margin-top: 300px;
+}
+
+.speakers .s1{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+align-items: center;
+
+}
+.speakers .s1 .head{
+    font-size: 25px;
+}
+.speakers .s1 .head h1 span:last-child{
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+.speakers .s1 .speaker{
+  width: 50%;
+  height: 50%;
+  position: relative;
+  
+
+}
+.speakers .s1 .speaker img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    
+    border: 2px solid #fff; /* white border so overlaps are visible */
+}
+.speakers .s1 .speaker .overlay{
+      width: 90%;
+    height: 20%;
+    padding: 20px;
+    object-fit: cover;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: var(--section-bg-color);
+    border: 2px solid #fff; /* white border so overlaps are visible */
+    background-color: var(--white-color);
+}
+
+.speakers .s1 .speaker .overlay h5,p{
+    margin: 0px 0px;
+    padding: 0px 0px;
+    
+    
+}
+.speakers .s1 .speaker .overlay h5{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+/*border offset*/
+.speakers .s1 .speaker .overlay::before {
+    content: "";
+    position: absolute;
+    top: -1.5px;
+    left: -2px;
+    bottom: 0px;
+    background: var(--primary-color);
+    width: 5px;
+      height: 89px;
+      transition: width 0.5s ease-in-out;
+      
+}
+/* expand the line when overlay is hovered */
+.speakers .s1 .speaker:hover .overlay::before {
+  width: 595px;
+  z-index: -1;
+  
+}
+.speakers .s1 .speaker:hover .overlay h5,
+.speakers .s1 .speaker:hover .overlay p,
+.speakers .s1 .speaker:hover .overlay ul{
+    color: var(--white-color);
+
+}
+
+.speakers .s1 .speaker .overlay ul{
+    display: flex   ;
+    gap: 10px;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    align-self: right;
+}
+.speakers .s1 .speaker .overlay .social-icon  {
+opacity: 0;
+  visibility: hidden;
+transition: opacity 0.5s ease 1s;}
+.speakers .s1 .speaker:hover .overlay .social-icon {
+   opacity: 1;
+  visibility: visible;
+
+}
+.speakers .s1 .speaker .overlay .social-icon li  {
+  background-color: var(--white-color);
+  border-radius: 50%;
+  padding: 3px;
+}
+.speakers .s1 .speaker .overlay .social-icon li:hover  {
+  background-color: var(--primary-color);
+}
+
+/* default: black */
+.speakers .s1 .speaker .overlay .social-icon li a {
+  color: black;
+  transition: color 0.3s ease; /* smooth change */
+}
+
+/* on hover: white */
+.speakers .s1 .speaker .overlay .social-icon li a:hover {
+  color: white;
+}
+.speakers .s2{
+    margin-top: 50px;
+}
+.speakers .s2 section{
+    height: 100%;
+    width: 100%;
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+.speakers .s2 section ul{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100%;
+    width: 100%;
+    margin: 0px 0px;
+    padding: 0px 0px
+    
+}
+.speakers .s2 section ul li{
+    width: 100%;
+    height: 100%;
+ position: relative;
+    
+}
+.speakers .s2 section ul li img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    
+}
+
+.speakers .s2 section ul li .overlay{
+      width: 80%;
+    height: 30%;
+    padding: 20px;
+    object-fit: cover;
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: var(--section-bg-color);
+    border: 2px solid #fff; /* white border so overlaps are visible */
+    background-color: var(--white-color);
+}
+
+
+.speakers .s2 section ul li .overlay h5,.speakers .s2 section ul li .overlay p{
+    margin: 10px 10px;
+    padding: 0px 0px;  
+}
+.speakers .s2 section ul li .overlay::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    bottom: 0px;
+    background: var(--primary-color);
+    width: 5px;
+      height: 63px;
+      transition: width 1.0s ease-in-out ;
+      
+}
+
+
+.speakers .s2 section ul li .overlay{
+    gap: 10px;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    align-self: right;
+}
+
+.speakers .s2 section ul li:hover .overlay::before{
+      width: 254px;
+  z-index: -1;
+  
+}
+.speakers .s2 section ul li:hover .overlay h5,
+.speakers .s2 section ul li:hover .overlay p,
+.speakers .s2 section ul li:hover .overlay ul{
+    color: var(--white-color);
+}
+
