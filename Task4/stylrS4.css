@@ -35,9 +35,9 @@ body{
 .name {
 display: flex;
 gap: 20px;
-margin-bottom: 30px;
+margin-bottom: 20px;
 }
-.name input{
+.name input,.phone input,.email input{
 /*input box modifications*/
  background: transparent;
  outline: none;
@@ -45,13 +45,17 @@ margin-bottom: 30px;
  width: 100%;       /* ✅ make it take the full width */
  border-bottom: 1px solid rgba(190, 185, 185, 0.822);
 }
-.name i {
+.name i,.phone i,.email i{
+  margin-left: 0px;
   margin-right: 0px;
+  margin-bottom: 0px;
+  margin-top: 5px;
   align-self: center;   /* vertically centered with inputs */
   color: #777a7e;
 }
 
-.name input{
+
+.name input,.phone input,.email input{
 /*input box modifications*/
  background: transparent;
  outline: none;
