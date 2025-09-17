@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --sidebar-color: #312450;
+    --primary-color: #5e42a6;
+    --secondary-color: #b74e91;
+    --section-bg-color: #c7b2dc;
+    --dark-color: #000000;
+    --navbar-bg-color: #273053;
+    --p-color: #717275;
+    --highlight-icon-color: #ff0100;
+    --main-transition: 0.5s all ease-in-out;
+}
+
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.flex-section {
+    display: flex;
+    flex-direction: row;
+
+}
+
+/*side bar*/
+.flex-section .menu {
+    min-height: 100vh;
+    /* ensures sidebar spans at least the full screen */
+    height: auto;
+    /* lets it grow with content */
+    width: 300px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: var(--sidebar-color);
+    padding: 145px 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.flex-section .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+.flex-section .menu ul li {
+    margin-bottom: 10px;
+    font-size: 20px;
+    position: relative;
+    /* needed for ::after positioning */
+    padding-bottom: 10px;
+}
+
+.flex-section .menu ul li a {
+    text-decoration: none;
+    color: #8b82a1;
+
+}
+
+.flex-section .menu ul li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* stick to the bottom */
+    height: 2px;
+    background-color: #8b82a1;
+    /* thickness of underline */
+    transition: width 0.3s ease;
+}
+
+/*use js*/
+.flex-section .menu ul li a:hover::after {
+    width: 100%;
+    /* expand underline on hover */
+}
+
+
+.flex-section .menu ul li a:hover {
+    color: #b5b8bf;
+}
+
+.flex-section .menu ul li a:active {
+    color: #5e42a6;
+}
+
+.flex-section .menu ul li a:active::after {
+    background: linear-gradient(to right, #4b0082, #8b00ff, #981196);
+}
+
+
+
+
+
+
+/*content first section */
+.flex-section .section {
+    flex: 1;
+    background-color: var(--section-bg-color);
+    background-attachment: fixed;
+    background-image: url("../assets/css/images/Screenshot\ 2025-09-15\ 075920.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding-left: 300px;
+}
+
+.flex-section .section .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.flex-section .section .content .intro {
+    padding: 100px;
+    width: 100%;
+    height: 100vh;
+}
+
+.flex-section .section .content .intro h1 {
+    color: rgb(221, 213, 213);
+    font-size: 50px;
+}
+
+.flex-section .section .content .intro p,
+.flex-section .section .content .intro a {
+    color: var(--section-bg-color);
+    font-size: 20px;
+}
+
+.flex-section .section .content .intro a:hover {
+    color: #fefefe;
+    text-decoration: none;
+}
+
+.flex-section .section .content .intro button {
+    color: var(--section-bg-color);
+    background-color: transparent;
+    border: 1px solid var(--section-bg-color);
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.flex-section .section .content .intro button:hover {
+    background-color: #6f54b6;
+}
+
+
+
+
+/*content second section */
+
+.flex-section .section .content .overview .s {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.flex-section .section .content .overview .s h1 {
+    color: rgb(221, 213, 213);
+    font-size: 30px;
+}
+
+.flex-section .section .content .overview .s p {
+    color: var(--section-bg-color);
+    font-size: 20px;
+}
+
+.flex-section .section .content .overview .s button {
+    color: var(--section-bg-color);
+    background-color: transparent;
+    border: 1px solid var(--section-bg-color);
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.flex-section .section .content .overview .s button:hover {
+    background-color: rgb(77, 77, 246);
+}
+
+.flex-section .section .content .overview .s img {
+    width: 40%;
+}
+
+/*what section*/
+
+.flex-section .section .content .what {
+    padding: 100px;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--secondary-color);
+}   
+
+.flex-section .section .content .what h3, 
+.flex-section .section .content .what h2 {
+    color: rgb(221, 213, 213);
+    font-size: 25px;
+}
+.flex-section .section .content .what p {
+    color: #dab6dd;
+    font-size: 20px;
+}
